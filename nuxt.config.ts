@@ -1,3 +1,5 @@
+import { SERVICE_NAME } from './src/shared/project';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -16,8 +18,8 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: 'https://meilab.teracy.link/',
-    name: 'Meicho Lab',
+    url: 'https://games.teracy.link/',
+    name: SERVICE_NAME,
     trailingSlash: true,
   },
   experimental: {
