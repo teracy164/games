@@ -2,8 +2,14 @@
   <div class="flex flex-col h-full">
     <Header style="height: 3em; min-height: 3em; max-height: 3em" class="no-print" />
     <main class="grow overflow-auto px-3 flex flex-col">
-      <div class="grow my-1">
-        <NuxtPage class="grow" />
+      <div class="flex">
+        <AdsVerticalRandom />
+
+        <div class="grow my-1 px-0 md:px-2">
+          <NuxtPage class="grow" />
+        </div>
+
+        <AdsVerticalRandom />
       </div>
 
       <div class="no-print text-center my-2 px-2 flex flex-wrap justify-between" style="font-size: 0.7rem">
