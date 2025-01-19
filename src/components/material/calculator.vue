@@ -1,0 +1,367 @@
+<template>
+  <div class="calculator" :key="updKey">
+    <h1 class="legend">育成計算機 - Material calculator</h1>
+    <div class="conditions">
+      <div class="flex flex-col mb-2">
+        <label>
+          【
+          <input id="check-character" type="checkbox" v-model="form.character.include" @change="calcMaterials" />
+          <label for="check-character">キャラ - Character</label>
+          】
+        </label>
+        <div class="pl-5">
+          <div class="flex items-center">
+            <label for="calc-select-character-lv" style="width: 4em">Lv</label>
+            <select id="calc-select-character-lv" v-model="form.character.lv" @change="calcMaterials" :disabled="!form.character.include">
+              <option v-for="lv in [0, 20, 40, 50, 60, 70, 80, 90]" :value="lv">{{ lv }}</option>
+            </select>
+            <input
+              id="character-breakthrough"
+              v-model="form.character.isBreakthrough"
+              type="checkbox"
+              style="margin-left: 1em"
+              @change="calcMaterials"
+              :disabled="!form.character.include || form.character.lv === 90"
+            />
+            <label for="character-breakthrough">突破する</label>
+          </div>
+          <div class="flex items-center">
+            <label style="width: 4em; min-width: 4em">スキル - Forte</label>
+            <div class="flex flex-wrap">
+              <div
+                v-for="item in [
+                  { label: '基本攻撃', prop: 'basic' },
+                  { label: '共鳴スキル', prop: 'dodge' },
+                  { label: '共鳴回路', prop: 'assist' },
+                  { label: '共鳴開放', prop: 'special' },
+                  { label: '変奏スキル', prop: 'chain' },
+                ]"
+                class="skill"
+              >
+                <label :for="`calc-select-${item.prop}`">
+                  {{ item.label }}
+                </label>
+                <select
+                  :id="`calc-select-${item.prop}`"
+                  v-model="form.character.skills[item.prop]"
+                  @change="calcMaterials"
+                  :disabled="!form.character.include"
+                >
+                  <option v-for="(_, index) in new Array(12)" :value="index + 1">{{ index + 1 }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="flex flex-col mb-2">
+        <label>
+          【
+          <input id="check-weapon" type="checkbox" v-model="form.weapon.include" @change="calcMaterials" />
+          <label for="check-weapon">武器 - Weapon</label>
+          】
+        </label>
+        <div class="pl-5">
+          <div class="flex items-center">
+            <span style="width: 4em">ランク</span>
+            <div v-for="rank in ['☆5', '☆4', '☆3']" class="mr-2">
+              <input
+                :id="`radio-calc-weapon-${rank}`"
+                v-model="form.weapon.rank"
+                type="radio"
+                name="calc-weapon-rank"
+                :value="rank"
+                :disabled="!form.weapon.include"
+                @change="calcMaterials"
+              />
+              <label :for="`radio-calc-weapon-${rank}`" class="px-2">{{ rank }}</label>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <label for="calc-select-weapon-lv" style="width: 4em">Lv</label>
+            <select id="calc-select-weapon-lv" v-model="form.weapon.lv" @change="calcMaterials" :disabled="!form.weapon.include">
+              <option v-for="lv in [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]" :value="lv">{{ lv }}</option>
+            </select>
+            <input
+              id="weapon-breakthrough"
+              v-model="form.weapon.isBreakthrough"
+              type="checkbox"
+              style="margin-left: 1em"
+              @change="calcMaterials"
+              :disabled="!form.weapon.include || form.weapon.lv === 90 || form.weapon.lv === 0"
+            />
+            <label for="weapon-breakthrough">突破する</label>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <div class="require-materials">
+      <h2 class="text-xl font-bold">必要素材 - Required</h2>
+      <div class="flex flex-wrap">
+        <div class="mr-5">
+          <p class="flex items-center">
+            ｼｪﾙｺｲﾝ - ShellCreditｘ
+            {{ result.money.toLocaleString() }}
+          </p>
+        </div>
+        <div class="mr-5">強敵素材：{{ result.character.core.expert }}</div>
+        <div class="mr-5">週ボス素材：{{ result.character.core.boss }}</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap">
+        TODO
+        <!-- <table class="border">
+          <thead>
+            <tr>
+              <th>キャラ素材</th>
+              <th style="width: 1.5em">☆5</th>
+              <th style="width: 1.5em">☆4</th>
+              <th style="width: 1.5em">☆3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <div>突破</div>
+              </th>
+              <td v-for="rank in ['A', 'B', 'C']">
+                {{ result.character.breakthrough[rank] }}
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div>レベル</div>
+              </th>
+              <td v-for="rank in ['A', 'B', 'C']">
+                {{ result.character.lv[rank] }}
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div>スキル</div>
+              </th>
+              <td v-for="rank in ['A', 'B', 'C']">
+                {{ result.character.skill[rank] }}
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
+
+        <!-- <table class="border">
+          <thead>
+            <tr>
+              <th>武器素材</th>
+              <th style="width: 1.5em">☆5</th>
+              <th style="width: 1.5em">☆4</th>
+              <th style="width: 1.5em">☆3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <div>突破</div>
+              </th>
+              <td v-for="rank in ['A', 'B', 'C']">
+                {{ result.weapon.breakthrough[rank] }}
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div>レベル</div>
+              </th>
+              <td v-for="rank in ['A', 'B', 'C']">
+                {{ result.weapon.lv[rank] }}
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
+      </div>
+    </div>
+  </div>
+</template>
+<script lang="ts" setup>
+import type { MaterialExp, MaterialBreakthrough } from '@/types/material';
+
+const { $meicho } = useNuxtApp();
+
+const updKey = ref(0);
+
+/*
+  ビルドしたjsで起動した際、imgのsrcを動的に変更すると画像が表示されない。
+  回避のために正式なパスを取得する
+*/
+const images = import.meta.glob('/public/**/*', { eager: true });
+
+const getImagePath = (path: string) => {
+  const item = images[`/public${path}`] as any;
+  if (item) {
+    return item.default;
+  }
+  return '';
+};
+
+const form = reactive({
+  character: {
+    include: true,
+    lv: 90,
+    isBreakthrough: true,
+    skills: { basic: 8, dodge: 8, assist: 8, special: 8, chain: 8 },
+  },
+  weapon: {
+    include: true,
+    lv: 90,
+    isBreakthrough: true,
+    rank: 'S' as 'S' | 'A' | 'B',
+  },
+});
+
+const result = reactive({
+  character: {
+    lv: { A: 0, B: 0, C: 0 },
+    breakthrough: { A: 0, B: 0, C: 0 },
+    skill: { A: 0, B: 0, C: 0 },
+    skillEx: 0,
+    core: { expert: 0, boss: 0 },
+  },
+  weapon: { lv: { A: 0, B: 0, C: 0 }, breakthrough: { A: 0, B: 0, C: 0 } },
+  money: 0,
+});
+
+const calcMaterials = () => {
+  result.money = 0;
+  result.character.lv = { A: 0, B: 0, C: 0 };
+  result.character.breakthrough = { A: 0, B: 0, C: 0 };
+  result.character.skill = { A: 0, B: 0, C: 0 };
+  result.character.skillEx = 0;
+  result.character.core = { expert: 0, boss: 0 };
+  result.weapon.lv = { A: 0, B: 0, C: 0 };
+  result.weapon.breakthrough = { A: 0, B: 0, C: 0 };
+
+  const materials = {
+    character: $meicho.getCharacterMaterials(),
+    weapon: $meicho.getWeaponMaterials(form.weapon.rank),
+  };
+
+  const filterExp = (list: MaterialExp[], lv: number) => {
+    return list.filter((item) => {
+      const matches = item.lv.match(/^(\d*)～(\d*)$/);
+      const to = matches?.length > 2 ? Number(matches[2]) : 0;
+      return to <= lv;
+    });
+  };
+
+  const filterBreakthrough = (list: MaterialBreakthrough[], lv: number, includeBreakthrough: boolean) => {
+    return list.filter((item) => {
+      if (item.lv < lv) return true;
+      if (item.lv === lv) {
+        return includeBreakthrough;
+      }
+      return false;
+    });
+  };
+
+  if (form.character.include) {
+    // キャラ突破素材の算出
+    filterBreakthrough(materials.character.breakthrough, form.character.lv, form.character.isBreakthrough).forEach((item) => {
+      result.money += item.money;
+      // result.character.breakthrough[item.materials.rank] += item.materials.num;
+    });
+    // // キャラレベル素材の算出
+    filterExp(materials.character.exp, form.character.lv).forEach(
+      (item) => (result.character.lv[item.materials.rarity] += item.materials.num)
+    );
+    // // キャラスキル素材の算出
+    // Object.values(form.character.skills).forEach((item) => {
+    //   materials.character.skill
+    //     .filter((m) => m.lv <= item)
+    //     .forEach((m) => {
+    //       result.money += m.money;
+    //       result.character.skill[m.materials.rank] += m.materials.num;
+    //       if (m.ex) {
+    //         result.character.skillEx += m.ex;
+    //       }
+    //     });
+    // });
+  }
+
+  if (form.weapon.include) {
+    // 武器突破素材の算出
+    // filterBreakthrough(materials.weapon.breakthrough, form.weapon.lv, form.weapon.isBreakthrough).forEach((item) => {
+    //   result.money += item.money;
+    //   result.weapon.breakthrough[item.materials.rank] += item.materials.num;
+    // });
+    // // 武器レベル素材の算出
+    // filterExp(materials.weapon.exp, form.weapon.lv).forEach((item) => {
+    //   // 武器経験値は段階によって小数点が出るため、段階ごとの素材数を加算せず合計から算出する
+    //   result.weapon.lv[item.materials.rank] = Math.ceil(item.sumExp / 3000);
+    // });
+  }
+};
+
+onMounted(() => {
+  calcMaterials();
+});
+</script>
+<style lang="scss" scoped>
+.calculator {
+  margin: 1em 0;
+  padding: 0.5em;
+  padding-top: 1.5em;
+  border: 1px solid white;
+  position: relative;
+
+  .legend {
+    position: absolute;
+    top: -1em;
+    font-size: 1.4em;
+    padding: 0 0.5em;
+    background-color: black;
+  }
+  .conditions {
+    border-bottom: 1px solid white;
+    .skill {
+      display: flex;
+      align-items: center;
+      margin-right: 1em;
+      label {
+        width: 5em;
+        display: flex;
+
+        img {
+          width: 1.5em;
+          height: 1.5em;
+        }
+      }
+      select {
+        width: 2.5em;
+      }
+    }
+  }
+
+  .require-materials {
+    table {
+      margin: 0.5em;
+    }
+    tbody {
+      th {
+        text-align: left;
+        > div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 6em;
+
+          img {
+            width: 1.2em;
+            height: 1.2em;
+          }
+        }
+      }
+      td {
+        text-align: center;
+        width: 2.5em;
+      }
+    }
+  }
+}
+</style>
