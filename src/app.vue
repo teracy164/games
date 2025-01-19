@@ -2,7 +2,9 @@
   <div class="flex flex-col h-full">
     <Header style="height: 3em; min-height: 3em; max-height: 3em" class="no-print" />
     <main class="grow overflow-auto px-3 flex flex-col">
-      <NuxtPage class="grow" />
+      <div class="grow my-1">
+        <NuxtPage class="grow" />
+      </div>
 
       <div class="no-print text-center my-2 px-2 flex flex-wrap justify-between" style="font-size: 0.7rem">
         <div>Created by teracy</div>
@@ -12,14 +14,16 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { SERVICE_NAME } from './shared/project';
+
 const description = [
   'てらしーによるゲーム情報発信用サイトです。',
   '原神・スターレイル・ゼンレスゾーンゼロ、鳴潮などのゲームについて発信しています。',
 ].join('\n');
 
 useSeoMeta({
-  title: 'テラゲームズ',
-  ogTitle: 'テラゲームズ',
+  title: SERVICE_NAME,
+  ogTitle: SERVICE_NAME,
   description,
   ogDescription: description,
 });

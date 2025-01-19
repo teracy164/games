@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>&lt;武器 - Weapon&gt;</h2>
+    <h2>
+      <label class="bg-red-400 px-2" style="border-radius: 2px">武器 - Weapon</label>
+    </h2>
     TODO
     <!-- <div class="flex items-center">
       <div v-for="rank in ['S', 'A', 'B']" class="mr-2">
@@ -17,7 +19,7 @@
     </div>
     <div class="material-list">
       <div>
-        <h3>突破素材 - Breakthrough</h3>
+        <h3>突破素材 - Ascend Materials</h3>
         <table class="border">
           <thead>
             <tr>
@@ -28,7 +30,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in materials.breakthrough">
+            <tr v-for="item in materials.ascend">
               <td>{{ item.lv }}</td>
               <td>{{ item.money.toLocaleString() }}</td>
               <td>{{ item.materials.rank }} x {{ item.materials.num }}</td>

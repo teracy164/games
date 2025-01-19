@@ -12,7 +12,7 @@ export interface MaterialExp {
 }
 
 /** 突破素材 */
-export interface MaterialBreakthrough {
+export interface MaterialAscend {
   lv: number;
   money: number;
   /** 雑魚的素材 */

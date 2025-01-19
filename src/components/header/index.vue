@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="menu-item font-bold text-lg" @click="navigateTo('/')">テラゲームズ</div>
+    <div class="menu-item font-bold text-lg" @click="navigateTo('/')">{{ SERVICE_NAME }}</div>
     <div class="menu-item" @click="visibleDrawer = true">menu</div>
 
     <el-drawer v-model="visibleDrawer" :with-header="false" class="header-menu-drawer">
@@ -14,6 +14,8 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { SERVICE_NAME } from '~/shared/project';
+
 const visibleDrawer = ref(false);
 </script>
 <style lang="scss">

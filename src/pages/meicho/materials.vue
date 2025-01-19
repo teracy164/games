@@ -6,6 +6,8 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { SERVICE_NAME } from '~/shared/project';
+
 const description = [
   '鳴潮用の育成計算機です。',
   'キャラのLvやスキルのLv、武器のLvを指定することで、育成に必要な素材をまとめて計算します。',
@@ -13,8 +15,8 @@ const description = [
 ].join('\n');
 
 useSeoMeta({
-  title: '育成計算機 | 鳴潮',
-  ogTitle: '育成計算機 | 鳴潮',
+  title: `鳴潮 - 育成計算機 | ${SERVICE_NAME}`,
+  ogTitle: `鳴潮 - 育成計算機 | ${SERVICE_NAME}`,
   description,
   ogDescription: description,
 });

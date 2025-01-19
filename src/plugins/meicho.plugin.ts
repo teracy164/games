@@ -1,4 +1,4 @@
-import type { MaterialBreakthrough, MaterialCoreSkill, MaterialExp, MaterialSkill } from '~/types/material';
+import type { MaterialAscend, MaterialExp, MaterialSkill } from '~/types/material';
 
 export class MeichoPlugin {
   /**
@@ -22,6 +22,8 @@ export class MeichoPlugin {
    * 音該経験値
    * 　レコードセット：Sealed Tube
    *
+   * 突破：Ascend
+   *
    * 【武器種】
    * 刀：Sword　　　　 ⇒　スキル素材　金属ドロップ：  Metallic Drip
    * 長刃：Broadlade　⇒　スキル素材　海蝕キメラ：Waveworn Residue239
@@ -44,14 +46,14 @@ export class MeichoPlugin {
   /** キャラの育成素材一覧を取得 */
   getCharacterMaterials() {
     return {
-      breakthrough: this.getCharacterBreakthroughMaterials(),
+      ascend: this.getCharacterAscendMaterials(),
       exp: this.getCharacterExpMaterials(),
       skill: this.getCharacterSkillMaterials(),
     };
   }
 
   /** キャラ突破素材一覧を取得 */
-  getCharacterBreakthroughMaterials(): MaterialBreakthrough[] {
+  getCharacterAscendMaterials(): MaterialAscend[] {
     // ★5・★4ともに素材の数は同じ
     return [
       { lv: 20, money: 5000, enemy: { rarity: 'basic', num: 4 }, boss: { num: 0 }, collection: { num: 0 } },
@@ -74,7 +76,7 @@ export class MeichoPlugin {
           collection: { num: 0 },
           money: 0,
         },
-      } as MaterialBreakthrough;
+      } as MaterialAscend;
       if (index > 0) {
         // ひとつ前の累計情報をコピー
         const prev = list[index - 1];
@@ -88,7 +90,7 @@ export class MeichoPlugin {
       d.sum.collection.num += item.collection.num;
       d.sum.money += item.money;
       return list.concat(d);
-    }, [] as MaterialBreakthrough[]);
+    }, [] as MaterialAscend[]);
   }
 
   /** キャラの経験値素材一覧を取得 */
@@ -103,11 +105,9 @@ export class MeichoPlugin {
       { lv: '71～80', require: 572400 },
       { lv: '81～90', require: 768900 },
     ].reduce((list, item, index) => {
-      // 特級で算出
-      const exp = 20000;
       const d = {
         ...item,
-        materials: { rarity: 'premium', num: Math.ceil(item.require / exp) },
+        materials: { rarity: 'premium', num: this.calcRequiredExpMaterials(item.require) },
         sumExp: 0,
         sum: { rarity: 'premium', num: 0 },
       } as MaterialExp;
@@ -115,10 +115,16 @@ export class MeichoPlugin {
         d.sumExp = list[index - 1].sumExp;
       }
       d.sumExp += d.require;
-      d.sum.num = Math.ceil(d.sumExp / exp);
+      d.sum.num = this.calcRequiredExpMaterials(d.sumExp);
       list.push(d);
       return list;
     }, [] as MaterialExp[]);
+  }
+
+  /** 経験値から必要な経験値素材の数を算出 */
+  calcRequiredExpMaterials(exp: number) {
+    // 特級で算出
+    return Math.ceil(exp / 20000);
   }
 
   /** キャラのスキル素材一覧を取得 */
@@ -151,16 +157,16 @@ export class MeichoPlugin {
   /** 武器の育成素材一覧を取得 */
   getWeaponMaterials(rank: 'S' | 'A' | 'B' = 'S') {
     return {
-      breakthrough: this.getWeaponBreakthroughMaterials(rank),
+      ascend: this.getWeaponAscendMaterials(rank),
       exp: this.getWeaponExpMaterials(rank),
     };
   }
 
   /** 武器突破素材一覧を取得 */
-  getWeaponBreakthroughMaterials(rank: 'S' | 'A' | 'B' = 'S'): MaterialBreakthrough[] {
+  getWeaponAscendMaterials(rank: 'S' | 'A' | 'B' = 'S'): MaterialAscend[] {
     // TODO キャラと武器で型を分ける
     return [];
-    const table: { [rank: string]: Partial<MaterialBreakthrough>[] } = {
+    const table: { [rank: string]: Partial<MaterialAscend>[] } = {
       // S: [
       //   { lv: 10, money: 12000, materials: { rank: 'C', num: 4 } },
       //   { lv: 20, money: 28000, materials: { rank: 'B', num: 12 } },
@@ -184,7 +190,7 @@ export class MeichoPlugin {
       // ],
     };
     // return table[rank].reduce((list, item, index) => {
-    //   const d = { ...item, sum: { A: 0, B: 0, C: 0, money: 0 } } as MaterialBreakthrough;
+    //   const d = { ...item, sum: { A: 0, B: 0, C: 0, money: 0 } } as MaterialAscend;
     //   if (index > 0) {
     //     // ひとつ前の累計情報をコピー
     //     Object.assign(d.sum, list[index - 1].sum);
@@ -192,7 +198,7 @@ export class MeichoPlugin {
     //   d.sum[item.materials.rank] += item.materials.num;
     //   d.sum.money += item.money;
     //   return list.concat(d);
-    // }, [] as MaterialBreakthrough[]);
+    // }, [] as MaterialAscend[]);
   }
 
   /** 武器の経験値素材一覧 */

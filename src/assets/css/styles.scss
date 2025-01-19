@@ -74,6 +74,24 @@ table {
   }
 }
 
+.rarity {
+  padding: 0 3px;
+  border-radius: 5px;
+
+  &.premium {
+    background-color: rgb(129, 110, 1);
+  }
+  &.advanced {
+    background-color: rgb(92, 0, 92);
+  }
+  &.medium {
+    background-color: rgb(106, 161, 184);
+  }
+  &.basic {
+    background-color: gray;
+  }
+}
+
 @page {
   size: landscape;
 }
