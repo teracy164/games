@@ -9,5 +9,11 @@
   border-radius: 5px;
   box-shadow: 1px 1px 3px lightgray;
   padding: 1em;
+
+  &.btn {
+    &:hover {
+      background-color: #222;
+    }
+  }
 }
 </style>

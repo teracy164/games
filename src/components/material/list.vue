@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>
-      <label class="bg-red-500 px-2" style="border-radius: 2px">必要素材リスト - Required Materials List</label>
+      <label class="bg-red-500 px-2" style="border-radius: 2px"
+        >必要素材リスト - <span class="hidden inline">Required</span> Materials<span class="hidden inline"> List</span></label
+      >
     </h1>
 
     <MaterialListCharacter />

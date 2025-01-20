@@ -1,7 +1,7 @@
 <template>
   <div class="calculator" :key="updKey">
     <h1 class="legend">
-      <label class="bg-red-500 px-2" style="border-radius: 2px">育成計算機 - Material calculator</label>
+      <label class="bg-red-500 px-2" style="border-radius: 2px">育成計算機 - <span class="hidden inline">Material </span>calculator</label>
     </h1>
     <div class="conditions">
       <div class="flex flex-col mb-2">
@@ -53,11 +53,13 @@
         <tr>
           <th>雑魚素材(Enemy)</th>
           <td>
-            <span v-for="rarity in Object.keys(result.character.enemy)" class="mr-2">
-              <span class="rarity" :class="{ [rarity]: true }"> {{ MEICHO_RARITY_LABEL[rarity] }}</span>
-              x
-              {{ result.character.enemy[rarity] }}
-            </span>
+            <div class="flex flex-wrap flex-col md:flex-row">
+              <span v-for="rarity in Object.keys(result.character.enemy)" class="mr-2 whitespace-nowrap">
+                <span class="rarity" :class="{ [rarity]: true }"> {{ MEICHO_RARITY_LABEL[rarity] }}</span>
+                x
+                {{ result.character.enemy[rarity] }}
+              </span>
+            </div>
           </td>
         </tr>
         <tr>
