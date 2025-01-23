@@ -104,7 +104,7 @@
 
       <div class="my-5 text-center">
         <div class="flex justify-center">
-          <div class="m-1" style="width: 150px; max-width: 33%">
+          <div class="m-1 w-[unset] md:w-[150px] max-w-[33%]">
             <a
               href="https://px.a8.net/svt/ejp?a8mat=44WWAW+2QTZYY+NA2+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amiami.jp%2Ftop%2Fdetail%2Fdetail%3Fgcode%3DFIGURE-181372%26a8%3Dh3s4_3t.TAFUt-mqtoNvU-qV2A5_R.s97.1aMUq.JaFmlANz2zsONRFOHvJAOCshJ3YWTAwi4RLQxs00000003017001%26_gl%3D1%252a1g50t9p%252a_ga%252aMTMwNDM0MDIyNy4xNzMwMzc4MDQx%252a_ga_DNC11S3TQ3%252aMTczNzYxOTYyOS4yOC4xLjE3Mzc2MjEzMjIuMC4wLjA."
               rel="nofollow"
@@ -113,7 +113,7 @@
             /></a>
             <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=44WWAW+2QTZYY+NA2+BWGDT" alt="" />
           </div>
-          <div class="m-1" style="width: 150px; max-width: 33%">
+          <div class="m-1 w-[unset] md:w-[150px] max-w-[33%]">
             <a
               href="https://px.a8.net/svt/ejp?a8mat=44WWAW+2QTZYY+NA2+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amiami.jp%2Ftop%2Fdetail%2Fdetail%3Fgcode%3DFIGURE-179675%26a8%3Dh3s4_3t.TAFUt-mqtoNvU-qV2A5_R.s97.1aMUq.JaFmlANz2zsONRFOHvJAOCshJ3YWTAwi4RLQxs00000003017001%26_gl%3D1%252a10kr10k%252a_ga%252aMTMwNDM0MDIyNy4xNzMwMzc4MDQx%252a_ga_DNC11S3TQ3%252aMTczNzYxOTYyOS4yOC4xLjE3Mzc2MjE0NjIuMC4wLjA."
               rel="nofollow"
@@ -122,7 +122,7 @@
             /></a>
             <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=44WWAW+2QTZYY+NA2+BWGDT" alt="" />
           </div>
-          <div class="m-1" style="width: 150px; max-width: 33%">
+          <div class="m-1 w-[unset] md:w-[150px] max-w-[33%]">
             <a
               href="https://px.a8.net/svt/ejp?a8mat=44WWAW+2QTZYY+NA2+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amiami.jp%2Ftop%2Fdetail%2Fdetail%3Fgcode%3DGOODS-04555341%26a8%3Dh3s4_3t.TAFUt-mqtoNvU-qV2A5_R.s97.1aMUq.JaFmlANz2zsONRFOHvJAOCshJ3YWTAwi4RLQxs00000003017001%26_gl%3D1%252a9stlj4%252a_ga%252aMTMwNDM0MDIyNy4xNzMwMzc4MDQx%252a_ga_DNC11S3TQ3%252aMTczNzYxOTYyOS4yOC4xLjE3Mzc2MjE1NTAuMC4wLjA."
               rel="nofollow"
