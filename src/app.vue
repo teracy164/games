@@ -5,8 +5,21 @@
       <div class="flex grow">
         <AdsVerticalRandom />
 
-        <div class="grow my-1 px-0 md:px-2">
+        <!-- <div class="grow my-1 px-0 md:px-2">
           <NuxtPage class="grow" />
+        </div> -->
+        <div class="flex grow">
+          <NuxtPage class="grow order-2 lg:order-1" />
+          <div class="flex justify-center order-1 lg:order-2 m-2">
+            <Card class="hidden lg:block w-[160px] max-w-[95vw]" style="padding: 0.5em">
+              <h3>
+                <label class="bg-red-400 px-2">最近のニュース</label>
+              </h3>
+              <div>
+                <ArticleItem v-for="item in news" :item="item" class="mb-2" />
+              </div>
+            </Card>
+          </div>
         </div>
 
         <AdsVerticalRandom />
@@ -20,7 +33,10 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { NEWS } from './shared/articles';
 import { SERVICE_NAME } from './shared/project';
+
+const news = NEWS.slice(0, 5);
 
 const description = [
   'てらしーによるゲーム情報発信用サイトです。',

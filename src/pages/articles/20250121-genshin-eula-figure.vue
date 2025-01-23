@@ -145,7 +145,7 @@
 import { NEWS } from '~/shared/articles';
 const news = NEWS.find((item) => item.id === 'genshin-eula-figure-20250121');
 
-const description = ['原神のエウルアのフィギュアが登場！！'].join('\n');
+const description = [news.description].join('\n');
 useSeoMeta({
   title: news.title,
   ogTitle: news.title,
