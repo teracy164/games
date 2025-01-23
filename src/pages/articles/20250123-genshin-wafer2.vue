@@ -183,7 +183,7 @@
 </template>
 <script lang="ts" setup>
 import { NEWS } from '~/shared/articles';
-const news = NEWS.find((item) => item.id === 'genshin-wafer-20250123');
+const news = NEWS.find((item) => item.id === 'genshin-wafer2-20250123');
 
 const description = [news.description].join('\n');
 useSeoMeta({
