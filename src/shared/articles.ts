@@ -3,10 +3,19 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: 'genshin-wafer2-20250123',
+    createdAt: '2025/01/23',
+    title: '【原神】シールウエハース第２弾の予約開始！！【2025年5月発売予定】',
+    description: '原神シールウエハース第２弾のよやくが始まりました。発売日は2025年5月を予定しています。',
+    link: '/articles/20250123-genshin-wafer2',
+    game: '原神',
+    hashTags: ['原神', 'GenshinImpact'],
+  },
+  {
     id: 'genshin-wafer-20250123',
     createdAt: '2025/01/23',
     title: '【原神】シールウエハースが発売間近！！【01/27発売】',
-    description: '原神のエウルアのフィギュアが登場！！',
+    description: '原神シールウエハースが2025年1月27発売！',
     link: '/articles/20250123-genshin-wafer',
     game: '原神',
     hashTags: ['原神', 'GenshinImpact'],
