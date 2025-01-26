@@ -5,7 +5,10 @@
 
     <el-drawer v-model="visibleDrawer" :with-header="false" class="header-menu-drawer">
       <div>
-        鳴潮
+        <NuxtLink class="sub-menu-item" to="/zzz">ゼンレスゾーンゼロ</NuxtLink>
+      </div>
+      <div>
+        <NuxtLink class="sub-menu-item" to="/meicho">鳴潮</NuxtLink>
         <div class="pl-5">
           <NuxtLink class="sub-menu-item" to="/meicho/materials">育成計算機</NuxtLink>
         </div>
