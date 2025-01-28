@@ -39,6 +39,7 @@
         </p>
 
         <AdsCarouselAmiami class="my-5" />
+
         <h3 class="mt-5"><label class="bg-red-400 px-2">商品情報</label></h3>
         <table class="item-info">
           <tbody>

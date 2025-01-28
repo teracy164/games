@@ -1,17 +1,14 @@
 <template>
   <div class="flex flex-col h-full">
     <Header style="height: 3em; min-height: 3em; max-height: 3em" class="no-print" />
-    <main class="grow overflow-auto px-3 flex flex-col">
+    <main class="grow overflow-auto p-1 flex-col">
       <div class="flex grow">
         <AdsVerticalRandom />
 
-        <!-- <div class="grow my-1 px-0 md:px-2">
-          <NuxtPage class="grow" />
-        </div> -->
-        <div class="flex grow">
+        <div class="flex grow md:p-3 flex">
           <NuxtPage class="grow order-2 lg:order-1" />
-          <div class="flex justify-center order-1 lg:order-2 m-2">
-            <Card class="hidden lg:block w-[160px] max-w-[95vw]" style="padding: 0.5em">
+          <div class="hidden lg:block flex justify-center order-1 lg:order-2 ml-2">
+            <Card class="w-[160px] max-w-[95vw]" style="padding: 0.5em">
               <h3>
                 <label class="bg-red-400 px-2">最近のニュース</label>
               </h3>
