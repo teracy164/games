@@ -3,6 +3,15 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250129-goods',
+    createdAt: '2025/01/29',
+    title: '【崩壊スターレイル】花火人形のHuggyが予約開始！【2025年7月発売予定】',
+    description: '崩壊スターレイルに登場する「花火」が使う花火人形がHuggyとなって登場',
+    link: '/articles/hsr/20250129-goods',
+    game: '崩壊スターレイル',
+    hashTags: ['崩壊スターレイル', 'HonkaiStarRailRail'],
+  },
+  {
     id: 'genshin-wafer2-20250123',
     createdAt: '2025/01/23',
     title: '【原神】シールウエハース第２弾の予約開始！！【2025年5月発売予定】',

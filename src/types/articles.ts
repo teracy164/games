@@ -4,6 +4,6 @@ export interface ArticleItem {
   title: string;
   description: string;
   link;
-  game?: '原神' | '鳴潮';
+  game?: '原神' | '崩壊スターレイル' | '鳴潮';
   hashTags?: string[];
 }
