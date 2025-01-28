@@ -11,5 +11,7 @@
         <Card class="text-center btn" style="width: 300px; max-width: 90vw"> 鳴潮 </Card>
       </el-link>
     </NuxtLink>
+
+    <AdsCarouselAmiami class="my-5" />
   </div>
 </template>

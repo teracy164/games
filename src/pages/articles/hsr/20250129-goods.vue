@@ -38,18 +38,7 @@
           頭部にはマグネットが搭載されており、両手を上下に可動させてポーズを取ることも可能です！
         </p>
 
-        <div class="my-2 flex justify-center">
-          <a href="https://px.a8.net/svt/ejp?a8mat=44WWAW+2QTZ76+NA2+5YJRL" rel="nofollow">
-            <img
-              border="0"
-              width="468"
-              height="60"
-              alt=""
-              src="https://www24.a8.net/svt/bgt?aid=250118024166&wid=001&eno=01&mid=s00000003017001001000&mc=1"
-          /></a>
-          <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=44WWAW+2QTZ76+NA2+5YJRL" alt="" />
-        </div>
-
+        <AdsCarouselAmiami class="my-5" />
         <h3 class="mt-5"><label class="bg-red-400 px-2">商品情報</label></h3>
         <table class="item-info">
           <tbody>
