@@ -9,7 +9,7 @@ export const NEWS: ArticleItem[] = [
     description: '崩壊スターレイルに登場する「花火」が使う花火人形がHuggyとなって登場',
     link: '/articles/hsr/20250129-goods',
     game: '崩壊スターレイル',
-    hashTags: ['崩壊スターレイル', 'HonkaiStarRailRail'],
+    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
   },
   {
     id: 'genshin-wafer2-20250123',
