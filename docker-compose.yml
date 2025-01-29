@@ -1,15 +1,25 @@
 version: '3.8'
 
 services:
-  nuxt:
-    image: node:18
+  app:
+    image: node:18-alpine # Node.js の公式イメージを使用
+    container_name: nuxt-app
     working_dir: /app
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./nuxt:/app # ローカルの Nuxt.js フォルダをコンテナ内の /app にマウント
     ports:
       - '3000:3000'
-    command: sh -c "npm install && npm run dev"
     environment:
       - HOST=0.0.0.0
       - PORT=3000
+    command: sh -c "npm install && npm run build && npm run start"
+
+  nginx:
+    image: nginx:latest # Nginx の公式イメージを使用
+    container_name: nginx-server
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro # 設定ファイルをコンテナにマウント
+    depends_on:
+      - app

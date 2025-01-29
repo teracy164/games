@@ -3,6 +3,15 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250129-goods-kafka',
+    createdAt: '2025/01/29',
+    title: '【崩壊スターレイル】カフカの1/7スケールフィギュアが予約開始！【2026年01月発売予定】',
+    description: '崩壊スターレイルに登場する「カフカ」の1/7スケールフィギュアが登場',
+    link: '/articles/hsr/20250129-goods-kafka',
+    game: '崩壊スターレイル',
+    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
+  },
+  {
     id: '20250129-goods',
     createdAt: '2025/01/29',
     title: '【崩壊スターレイル】花火人形のHuggyが予約開始！【2025年7月発売予定】',
