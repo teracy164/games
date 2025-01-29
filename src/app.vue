@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col h-full">
     <Header style="height: 3em; min-height: 3em; max-height: 3em" class="no-print" />
-    <main class="grow overflow-auto p-1 flex-col">
+    <main class="grow overflow-auto p-1 flex flex-col">
       <div class="flex grow">
         <AdsVerticalRandom />
 

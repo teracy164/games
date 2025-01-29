@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: './src',
   devServer: {
-    host: '0.0.0.0',
+    host: process.env.HOST || '0.0.0.0',
     port: Number(process.env.PORT || 3000),
   },
   css: ['@/assets/css/styles.scss'],
