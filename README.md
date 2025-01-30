@@ -1,4 +1,4 @@
-# Meicho Lab
+# TERA GAMES
 
 ## Setup
 
