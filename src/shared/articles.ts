@@ -3,6 +3,15 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250131-ps5-package',
+    createdAt: '2025/01/31',
+    title: '【崩壊スターレイル】PS5ディスクギフトパック発売【2025年01月31日発売】',
+    description: '崩壊スターレイルにPS5ディスクギフトパックが発売！豊富な特典がついてくる！',
+    link: '/articles/hsr/20250131-ps5-package',
+    game: '崩壊スターレイル',
+    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
+  },
+  {
     id: '20250129-goods-kafka',
     createdAt: '2025/01/29',
     title: '【崩壊スターレイル】カフカの1/7スケールフィギュアが予約開始！【2026年01月発売予定】',
