@@ -3,6 +3,15 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250204-1kuji',
+    createdAt: '2025/01/31',
+    title: '【崩壊スターレイル】一番くじONLINEで再販売が決定！！！【2025年04月23日17時より発売】',
+    description: '崩壊スターレイル一番くじの再販売が決定！！！202年4月23日17時より販売開始です',
+    link: '/articles/hsr/20250204-1kuji',
+    game: '崩壊スターレイル',
+    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
+  },
+  {
     id: '20250131-ps5-package',
     createdAt: '2025/01/31',
     title: '【崩壊スターレイル】PS5ディスクギフトパック発売【2025年01月31日発売】',

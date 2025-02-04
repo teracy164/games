@@ -174,7 +174,6 @@ const pageId = route.fullPath
   .split('/')
   .filter((item) => item)
   .pop();
-console.log(route, route.fullPath, route.fullPath.split('/'), route.fullPath.split('/').pop(), pageId);
 const news = NEWS.find((item) => item.id === pageId);
 if (!news) {
   navigateTo('/');
