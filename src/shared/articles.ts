@@ -3,11 +3,20 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250205-update',
+    createdAt: '2025/02/05',
+    title: '【崩壊スターレイル】過去キャラの強化を公式が明言！！？',
+    description: '過去キャラの強化を公式が明言！！？',
+    link: '/articles/hsr/20250205-update/',
+    game: '崩壊スターレイル',
+    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
+  },
+  {
     id: '20250204-1kuji',
     createdAt: '2025/01/31',
     title: '【崩壊スターレイル】一番くじONLINEで再販売が決定！！！【2025年04月23日17時より発売】',
     description: '崩壊スターレイル一番くじの再販売が決定！！！202年4月23日17時より販売開始です',
-    link: '/articles/hsr/20250204-1kuji',
+    link: '/articles/hsr/20250204-1kuji/',
     game: '崩壊スターレイル',
     hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
   },
