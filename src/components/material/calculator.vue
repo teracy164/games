@@ -37,41 +37,43 @@
       </h2>
 
       <table>
-        <tr>
-          <th>シェルコイン - ShellCredit</th>
-          <td>{{ result.money.toLocaleString() }}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>シェルコイン - ShellCredit</th>
+            <td>{{ result.money.toLocaleString() }}</td>
+          </tr>
 
-        <tr>
-          <th>経験値素材(Exp)</th>
-          <td>
-            <span class="rarity premium"> {{ MEICHO_RARITY_LABEL.premium }}</span>
-            x
-            {{ result.character.lv.premium }}
-          </td>
-        </tr>
-        <tr>
-          <th>雑魚素材(Enemy)</th>
-          <td>
-            <div class="flex flex-wrap flex-col md:flex-row">
-              <span v-for="rarity in Object.keys(result.character.enemy)" class="mr-2 whitespace-nowrap">
-                <span class="rarity" :class="{ [rarity]: true }"> {{ MEICHO_RARITY_LABEL[rarity] }}</span>
-                x
-                {{ result.character.enemy[rarity] }}
-              </span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>ボス素材(Boss)</th>
-          <td>
-            {{ result.character.boss }}
-          </td>
-        </tr>
-        <tr>
-          <th>採集素材(collection)</th>
-          <td>{{ result.character.collection }}</td>
-        </tr>
+          <tr>
+            <th>経験値素材(Exp)</th>
+            <td>
+              <span class="rarity premium"> {{ MEICHO_RARITY_LABEL.premium }}</span>
+              x
+              {{ result.character.lv.premium }}
+            </td>
+          </tr>
+          <tr>
+            <th>雑魚素材(Enemy)</th>
+            <td>
+              <div class="flex flex-wrap flex-col md:flex-row">
+                <span v-for="rarity in Object.keys(result.character.enemy)" class="mr-2 whitespace-nowrap">
+                  <span class="rarity" :class="{ [rarity]: true }"> {{ MEICHO_RARITY_LABEL[rarity] }}</span>
+                  x
+                  {{ result.character.enemy[rarity] }}
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>ボス素材(Boss)</th>
+            <td>
+              {{ result.character.boss }}
+            </td>
+          </tr>
+          <tr>
+            <th>採集素材(collection)</th>
+            <td>{{ result.character.collection }}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
@@ -161,6 +163,10 @@ const calcMaterials = () => {
     const requiredExp = filterExp(materials.character.exp, form.character.lv).reduce((sum, item) => sum + item.require, 0);
     console.log('required exp', requiredExp, $meicho.calcRequiredExpMaterials(requiredExp));
     result.character.lv.premium = $meicho.calcRequiredExpMaterials(requiredExp);
+
+    // シェルコインは経験値1000あたり350
+    // 特級の場合は7000シェルコイン
+    result.money += Math.ceil(requiredExp / 20000) * 7000;
 
     // filterExp(materials.character.exp, form.character.lv).forEach((item) => {
     //   result.character.lv[item.materials.rarity] += item.materials.num;
