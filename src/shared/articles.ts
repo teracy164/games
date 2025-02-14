@@ -3,6 +3,16 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250129-goods-kafka',
+    createdAt: '2025/01/29',
+    updatedAt: '2025/02/14',
+    title: '【崩壊スターレイル】カフカの1/7スケールフィギュアが予約受付中！【2026年01月発売予定】',
+    description: '崩壊スターレイルに登場する「カフカ」の1/7スケールフィギュアが登場',
+    link: '/articles/hsr/20250129-goods-kafka',
+    game: '崩壊スターレイル',
+    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
+  },
+  {
     id: '20250205-update',
     createdAt: '2025/02/05',
     title: '【崩壊スターレイル】過去キャラの強化を公式が明言！！？',
@@ -26,15 +36,6 @@ export const NEWS: ArticleItem[] = [
     title: '【崩壊スターレイル】PS5ディスクギフトパック発売【2025年01月31日発売】',
     description: '崩壊スターレイルにPS5ディスクギフトパックが発売！豊富な特典がついてくる！',
     link: '/articles/hsr/20250131-ps5-package',
-    game: '崩壊スターレイル',
-    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
-  },
-  {
-    id: '20250129-goods-kafka',
-    createdAt: '2025/01/29',
-    title: '【崩壊スターレイル】カフカの1/7スケールフィギュアが予約開始！【2026年01月発売予定】',
-    description: '崩壊スターレイルに登場する「カフカ」の1/7スケールフィギュアが登場',
-    link: '/articles/hsr/20250129-goods-kafka',
     game: '崩壊スターレイル',
     hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
   },

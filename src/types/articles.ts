@@ -1,6 +1,7 @@
 export interface ArticleItem {
   id: string;
   createdAt: string;
+  updatedAt?: string;
   title: string;
   description: string;
   link;

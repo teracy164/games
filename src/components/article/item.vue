@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="text-gray-300 text-xs">{{ item.createdAt }}</p>
+    <p class="text-gray-300 text-xs">{{ item.updatedAt || item.createdAt }}</p>
     <NuxtLink :to="item.link">
       <el-link type="primary">
         {{ item.title }}

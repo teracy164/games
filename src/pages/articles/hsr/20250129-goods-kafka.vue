@@ -6,7 +6,7 @@
           <label>{{ news.title }}</label>
         </h1>
         <div class="absolute text-sm text-gray-500" style="bottom: 100%; right: 0; font-size: 0.7em; line-height: 1em">
-          {{ news.createdAt }}
+          {{ news.updatedAt || news.createdAt }}
         </div>
       </div>
 
@@ -17,7 +17,7 @@
       <div class="mb-5">
         崩壊スターレイルよりカフカが1/7スケールのフィギュアで登場！
         <br />
-        あみあみにて予約が始まっています。
+        あみあみにて予約受付中です。
         <br />
         発売日は2026年1月となっております。
 
