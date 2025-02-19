@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     },
     routeRules: {
       '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
-      '/**': { headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate' } },
+      '/**': { headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate', Pragma: 'no-cache', Expires: '0' } },
     },
   },
 });
