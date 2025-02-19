@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "serve": "node server.js",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate --fail-on-error",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

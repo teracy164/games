@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div v-if="item?.link">
     <p class="text-gray-300 text-xs">{{ item.updatedAt || item.createdAt }}</p>
-    <NuxtLink :to="item.link">
+    <NuxtLink :to="item.link" no-prefetch>
       <el-link type="primary">
         {{ item.title }}
       </el-link>

@@ -11,7 +11,7 @@
       </div>
 
       <div class="flex justify-end my-2">
-        <ShareBtnTwitter :title="news.title" :hash-tags="news.hashTags" :page-url="getPageUrl()" />
+        <ShareBtnTwitter v-if="href" :title="news.title" :hash-tags="news.hashTags" :page-url="href" />
       </div>
 
       <div class="mb-5">
@@ -146,16 +146,12 @@ import { NEWS } from '~/shared/articles';
 const news = NEWS.find((item) => item.id === 'genshin-eula-figure-20250121');
 
 const description = [news.description].join('\n');
-useSeoMeta({
-  title: news.title,
-  ogTitle: news.title,
-  description,
-  ogDescription: description,
-});
+useSeoMeta({ title: news.title, ogTitle: news.title, description, ogDescription: description });
 
-const getPageUrl = () => {
-  return location.href;
-};
+const href = ref('');
+onMounted(() => {
+  href.value = location?.href;
+});
 </script>
 <style lang="scss" scoped>
 table.item-info {

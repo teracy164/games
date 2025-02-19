@@ -11,7 +11,7 @@
       </div>
 
       <div class="flex justify-end my-2">
-        <ShareBtnTwitter :title="news.title" :hash-tags="news.hashTags" :page-url="getPageUrl()" />
+        <ShareBtnTwitter v-if="href" :title="news.title" :hash-tags="news.hashTags" :page-url="href" />
       </div>
 
       <div class="mb-5">
@@ -68,7 +68,7 @@ import { NEWS } from '~/shared/articles';
 import Tweet from 'vue-tweet';
 
 const route = useRoute();
-const pageId = route.fullPath
+const pageId = String(route.fullPath)
   .split('/')
   .filter((item) => item)
   .pop();
@@ -78,16 +78,12 @@ if (!news) {
 }
 
 const description = [news.description].join('\n');
-useSeoMeta({
-  title: news.title,
-  ogTitle: news.title,
-  description,
-  ogDescription: description,
-});
+useSeoMeta({ title: news.title, ogTitle: news.title, description, ogDescription: description });
 
-const getPageUrl = () => {
-  return location.href;
-};
+const href = ref('');
+onMounted(() => {
+  href.value = location?.href;
+});
 </script>
 <style lang="scss" scoped>
 img {
