@@ -17,9 +17,16 @@ export default defineNuxtConfig({
   app: { head: { htmlAttrs: { lang: 'ja' } } },
   site: { url: 'https://games.teracy.link/', name: SERVICE_NAME, trailingSlash: true },
   experimental: { defaults: { nuxtLink: { trailingSlash: 'append' } } },
-  // nitro: {
-  //   prerender: {
-  //     failOnError: false,
-  //   },
-  // },
+  nitro: {
+    //   prerender: {
+    //     failOnError: false,
+    //   },
+    prerender: {
+      routes: ['/'], // SSGで生成するページ
+    },
+    routeRules: {
+      '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+      '/**': { headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate' } },
+    },
+  },
 });
