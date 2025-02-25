@@ -1,13 +1,3 @@
 <template>
-  <Card>
-    <h1>
-      <label class="bg-red-400">ニュース一覧</label>
-    </h1>
-    <template v-for="item in NEWS">
-      <NewsItem :item="item" class="mb-2" />
-    </template>
-  </Card>
+  <ArticleList title="ニュース一覧" />
 </template>
-<script lang="ts" setup>
-import { NEWS } from '~/shared/articles';
-</script>
