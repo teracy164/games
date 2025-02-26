@@ -29,4 +29,9 @@ export default defineNuxtConfig({
       '/**': { headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate', Pragma: 'no-cache', Expires: '0' } },
     },
   },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.BASE_URL || 'https://games.teracy.link',
+    },
+  },
 });

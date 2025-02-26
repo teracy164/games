@@ -22,16 +22,15 @@
 </template>
 <script lang="ts" setup>
 import type { ArticleItem } from '~/types/articles';
-import { useRequestURL, useRequestHeaders } from '#app';
+import { useRuntimeConfig } from '#app';
 
 const { news } = defineProps<{ news: ArticleItem }>();
 
 const description = [news.description].join('\n');
 useSeoMeta({ title: news.title, ogTitle: news.title, description, ogDescription: description });
 
-const url = useRequestURL();
-const headers = useRequestHeaders();
-const fullUrl = `${url.protocol}//${headers.host}${url.pathname}${url.search}`;
+const config = useRuntimeConfig();
+const fullUrl = `${config.public.baseURL}${useRoute().fullPath}`;
 </script>
 <style lang="scss" scoped>
 img {
