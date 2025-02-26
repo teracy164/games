@@ -10,7 +10,7 @@
 const { title, pageUrl, hashTags } = defineProps<{ title: string; pageUrl: string; hashTags?: string[] }>();
 
 const hashTag = hashTags?.map((tag) => `%23${tag}`).join(' ');
-const message = encodeURI(`${title}\n${pageUrl}` + (hashTag ? '\n' : '')) + hashTag;
+const message = encodeURI(`${title}\n\n${pageUrl}` + (hashTag ? '\n\n' : '')) + hashTag;
 </script>
 <style lang="scss" scoped>
 button {

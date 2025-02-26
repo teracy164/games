@@ -11,7 +11,7 @@
       </div>
 
       <div class="flex justify-end my-2">
-        <ShareBtnTwitter v-if="href" :title="news.title" :hash-tags="news.hashTags" :page-url="href" />
+        <ShareBtnTwitter :title="news.title" :hash-tags="news.hashTags" :page-url="url" />
       </div>
 
       <div>
@@ -22,16 +22,14 @@
 </template>
 <script lang="ts" setup>
 import type { ArticleItem } from '~/types/articles';
+import { useRequestURL } from '#app';
 
 const { news } = defineProps<{ news: ArticleItem }>();
 
 const description = [news.description].join('\n');
 useSeoMeta({ title: news.title, ogTitle: news.title, description, ogDescription: description });
 
-const href = ref('');
-onMounted(() => {
-  href.value = location?.href;
-});
+const url = useRequestURL().toString();
 </script>
 <style lang="scss" scoped>
 img {
