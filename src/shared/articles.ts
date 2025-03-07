@@ -3,6 +3,15 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250307-genshin-miko-figure',
+    createdAt: '2025/03/07',
+    title: '【原神】八重神子の1/7フィギュアが登場！！あみあみにて予約開始！！',
+    description: '原神の八重神子の1/7フィギュアが登場！！あみあみにて予約開始！！',
+    link: '/articles/genshin/20250307-miko-figure',
+    game: '原神',
+    hashTags: ['原神', 'GenshinImpact'],
+  },
+  {
     id: '20250129-goods-kafka',
     createdAt: '2025/01/29',
     updatedAt: '2025/02/14',
