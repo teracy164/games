@@ -2,18 +2,27 @@
   <div class="header">
     <div class="flex items-center">
       <div class="menu-item font-bold text-lg" @click="navigateTo('/')">{{ SERVICE_NAME }}</div>
-      <div class="menu-item" @click="navigateTo('/articles')">ニュース</div>
     </div>
     <div class="menu-item" @click="visibleDrawer = true">menu</div>
 
     <el-drawer v-model="visibleDrawer" :with-header="false" class="header-menu-drawer">
       <div>
-        <NuxtLink class="sub-menu-item" to="/zzzero">ゼンレスゾーンゼロ</NuxtLink>
-      </div>
-      <div>
-        <NuxtLink class="sub-menu-item" to="/meicho">鳴潮</NuxtLink>
+        <h1>
+          <span class="border-b px-2">鳴潮</span>
+        </h1>
         <div class="pl-5">
           <NuxtLink class="sub-menu-item" to="/meicho/materials">育成計算機</NuxtLink>
+        </div>
+      </div>
+      <div class="mt-5">
+        <h1>
+          <span class="border-b mx-2">ゼンレスゾーンゼロ</span>
+        </h1>
+        <div class="pl-5">
+          <p>以下のサイトにて公開中</p>
+          <el-link type="primary">
+            <a href="https://zzz.teracy.link/" target="_blank">https://zzz.teracy.link/</a>
+          </el-link>
         </div>
       </div>
     </el-drawer>

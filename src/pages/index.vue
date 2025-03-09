@@ -1,10 +1,16 @@
 <template>
   <div class="h-full flex flex-col justify-center items-center">
-    <NuxtLink to="/zzzero" class="m-5">
+    <a href="https://zzz.teracy.link/" target="_blank" class="text-xl">
       <el-link type="primary" :underline="false" style="font-size: 24px">
-        <Card class="text-center btn" style="width: 300px; max-width: 90vw"> ゼンレスゾーンゼロ </Card>
+        <Card class="text-center btn" style="width: 300px; max-width: 90vw">
+          ゼンレスゾーンゼロ
+          <div class="mt-5 text-sm">
+            以下サイトにて公開中
+            <p>https://zzz.teracy.link/</p>
+          </div>
+        </Card>
       </el-link>
-    </NuxtLink>
+    </a>
 
     <NuxtLink to="/meicho" class="m-5">
       <el-link type="primary" :underline="false" style="font-size: 24px">
