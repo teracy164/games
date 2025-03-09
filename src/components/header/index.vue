@@ -8,7 +8,7 @@
 
     <el-drawer v-model="visibleDrawer" :with-header="false" class="header-menu-drawer">
       <div>
-        <NuxtLink class="sub-menu-item" to="/zzz">ゼンレスゾーンゼロ</NuxtLink>
+        <NuxtLink class="sub-menu-item" to="/zzzero">ゼンレスゾーンゼロ</NuxtLink>
       </div>
       <div>
         <NuxtLink class="sub-menu-item" to="/meicho">鳴潮</NuxtLink>
