@@ -11,7 +11,9 @@
           <span class="border-b px-2">鳴潮</span>
         </h1>
         <div class="pl-5">
-          <NuxtLink class="sub-menu-item" to="/meicho/materials">育成計算機</NuxtLink>
+          <NuxtLink class="sub-menu-item" to="/ww/">
+            <el-link type="primary"> 育成計算機 </el-link>
+          </NuxtLink>
         </div>
       </div>
       <div class="mt-5">
