@@ -23,7 +23,7 @@
         <div class="pl-5">
           <p>以下のサイトにて公開中</p>
           <el-link type="primary">
-            <a href="https://zzz.teracy.link/" target="_blank">https://zzz.teracy.link/</a>
+            <a :href="ZZZ_TOOLS_URL" target="_blank">{{ ZZZ_TOOLS_URL }}</a>
           </el-link>
         </div>
       </div>
@@ -31,7 +31,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { SERVICE_NAME } from '~/shared/project';
+import { SERVICE_NAME, ZZZ_TOOLS_URL } from '~/shared/project';
 
 const visibleDrawer = ref(false);
 </script>
