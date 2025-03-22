@@ -9,6 +9,13 @@ const adAmiami = `
 <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=44WWAW+2QTZ76+NA2+66H9D" alt="">
  `;
 
+// アベンチュリンねんどろいどどーる
+const adAve = `
+<a href="https://px.a8.net/svt/ejp?a8mat=44WWAW+2QTZ76+NA2+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amiami.jp%2Ftop%2Fdetail%2Fdetail%3Fgcode%3DFIGURE-183997%26a8%3DJgHMsgTYwGp2_fpLukS8lKotNZesmYHBUYpEyHPBzFnStNPGyGvESNnLu8zNodHJzguKwNvDMmQrxs00000003017001%26_gl%3D1%252a1xlhkv%252a_ga%252aMTMwNDM0MDIyNy4xNzMwMzc4MDQx%252a_ga_DNC11S3TQ3%252aMTc0MjY4MzQ4Ni4xMTguMS4xNzQyNjgzNjIxLjAuMC4w" rel="nofollow">
+<img border="0" alt="" src="https://img.amiami.jp/images/product/main/251/FIGURE-183997.jpg"/></a>
+<img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=44WWAW+2QTZ76+NA2+BWGDT" alt="" />
+`;
+
 // カフカフィギュア
 const adKafka = `
 <a href="https://px.a8.net/svt/ejp?a8mat=44WWAW+2QTZYY+NA2+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amiami.jp%2Ftop%2Fdetail%2Fdetail%3Fgcode%3DFIGURE-181818%26a8%3Dh3s4_3t.TAFUt-mqtoNvU-qnPXr_R.s97.1uesN9JaFmlANzezshGAN.mvJAOCshJ3YWTAwi4RLQxs00000003017001%26_gl%3D1%252a1g1f9nt%252a_ga%252aMTMwNDM0MDIyNy4xNzMwMzc4MDQx%252a_ga_DNC11S3TQ3%252aMTczODEzMzc0Ny41MS4xLjE3MzgxMzM3NzkuMC4wLjA." rel="nofollow">
@@ -59,5 +66,5 @@ const ad6 = `
 <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=44WWAW+2QTZYY+NA2+BWGDT" alt="">
 `;
 
-const items = [adAmiami, adMiko, adKafka, ad1, ad2, ad3, ad4, ad5, ad6];
+const items = [adAmiami, adAve, adMiko, adKafka, ad1, ad2, ad3, ad4, ad5, ad6];
 </script>

@@ -3,6 +3,15 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250323-hsr-ave',
+    createdAt: '2025/03/23',
+    title: '【崩壊スターレイル】アベンチュリンのねんどろいどどーるが登場！！【2026年02月発売予定】',
+    description: '崩壊スターレイルからアベンチュリンのねんどろいどどーるが予約開始！！2026年02月発売予定',
+    link: '/articles/hsr/20250323-ave',
+    game: '崩壊スターレイル',
+    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
+  },
+  {
     id: '20250307-genshin-miko-figure',
     createdAt: '2025/03/07',
     title: '【原神】八重神子の1/7フィギュアが登場！！あみあみにて予約開始！！',
