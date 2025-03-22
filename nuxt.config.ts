@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   elementPlus: {
     /** Options */
   },
+  tailwindcss: {},
   app: { head: { htmlAttrs: { lang: 'ja' } } },
   site: { url: 'https://games.teracy.link/', name: SERVICE_NAME, trailingSlash: true },
   experimental: { defaults: { nuxtLink: { trailingSlash: 'append' } } },
