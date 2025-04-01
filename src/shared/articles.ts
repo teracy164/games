@@ -3,6 +3,15 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250401-hsr-figure',
+    createdAt: '2025/04/01',
+    title: '【崩壊スターレイル】「ミスターフク郎のスタジオ」シリーズのデフォルメフィギュアが登場！！【2025年10月発売予定】',
+    description: '崩壊スターレイルからミスターフク郎のスタジオシリーズのデフォルメフィギュアが登場！2025年10月発売予定',
+    link: '/articles/hsr/20250401-figure',
+    game: '崩壊スターレイル',
+    hashTags: ['崩壊スターレイル', 'スタレ', 'HonkaiStarRail'],
+  },
+  {
     id: '20250323-hsr-ave',
     createdAt: '2025/03/23',
     title: '【崩壊スターレイル】アベンチュリンのねんどろいどどーるが登場！！【2026年02月発売予定】',
