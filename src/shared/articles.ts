@@ -3,6 +3,15 @@ import type { ArticleItem } from '~/types/articles';
 /** ニュースアイテム（追加するときはcreatedAt降順となるように追加する） */
 export const NEWS: ArticleItem[] = [
   {
+    id: '20250516-genshin-citrali-figure',
+    createdAt: '2025/05/16',
+    title: '【原神】シトラリの1/8フィギュアが登場！！【2026年01月発売予定】',
+    description: '原神からシトラリの白星黒曜Verフィギュアが1/8スケールで登場！2026年01月発売予定',
+    link: '/articles/genshin/20250516-citrali-figure',
+    game: '原神',
+    hashTags: ['原神', 'GenshinImpact'],
+  },
+  {
     id: '20250401-hsr-figure',
     createdAt: '2025/04/01',
     title: '【崩壊スターレイル】「ミスターフク郎のスタジオ」シリーズのデフォルメフィギュアが登場！！【2025年10月発売予定】',

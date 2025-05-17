@@ -65,6 +65,11 @@ const ad6 = `
 <img border="0" alt="" src="https://img.amiami.jp/images/product/main/244/FIGURE-180320.jpg"></a>
 <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=44WWAW+2QTZYY+NA2+BWGDT" alt="">
 `;
+const adCitrali = `
+<a href="https://px.a8.net/svt/ejp?a8mat=44WWAW+2QTZYY+NA2+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amiami.jp%2Ftop%2Fdetail%2Fdetail%3Fgcode%3DFIGURE-186337%26a8%3DJgHMsgTYwGp2_fpLukS8lKotNZesmYHBUYpEyHPBzFnStNPGyGvESNnLu8zNodHJzguKwNvDMmQrxs00000003017001%26_gl%3D1%252a1h3u6nm%252a_gcl_au%252aMTU4Mjc0OTYxNy4xNzQ2Njk2MTc4%252a_ga%252aMTMwNDM0MDIyNy4xNzMwMzc4MDQx%252a_ga_DNC11S3TQ3%252aczE3NDc1MTkwNTkkbzM0JGcxJHQxNzQ3NTE5MzU2JGowJGwwJGgw" rel="nofollow">
+<img border="0" alt="" src="https://img.amiami.jp/images/product/main/252/FIGURE-186337.jpg"/></a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=44WWAW+2QTZYY+NA2+BWGDT" alt="" />
+`;
 
-const items = [adAmiami, adAve, adMiko, adKafka, ad1, ad2, ad4, ad5, ad6];
+const items = [adAmiami, adCitrali, adAve, adMiko, adKafka, ad1, ad2, ad4, ad5, ad6];
 </script>
