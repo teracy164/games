@@ -124,4 +124,7 @@
 <script lang="ts" setup>
 import { NEWS } from '~/shared/articles';
 const news = NEWS.find((item) => item.id === '20250516-genshin-citrali-figure');
+if (!news) {
+  navigateTo('/');
+}
 </script>
